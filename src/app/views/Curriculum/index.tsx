@@ -22,6 +22,8 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 
 export const CurriculumView: FunctionComponent<any> = () => {
   const {palette} = useTheme();
+
+  const textColor = palette.text.primary;
   return (
     <Card style={{padding: "1rem 1.5rem"}}>
       <Typography variant="h6">About me</Typography>
@@ -42,31 +44,30 @@ export const CurriculumView: FunctionComponent<any> = () => {
             </IconButton>
           </ListItemAvatar>
           <ListItemText
-            primary={
-              <Typography variant="subtitle2" style={{fontSize: "16px"}}>
-                Graphic Design
-              </Typography>
-            }
             secondary={
-              <React.Fragment>
+              <div>
+                <Typography variant="subtitle2" style={{fontSize: "16px", color: textColor}}>
+                  Graphic Design
+                </Typography>
                 <Box style={{display: "flex"}}>
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
-                    <CalendarTodayIcon style={{fontSize: "15px"}} /> &nbsp; 2015
-                  </Typography>
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <CalendarTodayIcon style={{fontSize: "15px"}} />
+                    &nbsp;
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      2015
+                    </Typography>
+                  </div>
                   &nbsp; &nbsp;&nbsp;
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
+                  <div style={{display: "flex", alignItems: "center"}}>
                     <PlaceIcon style={{fontSize: "15px"}} />
-                    &nbsp;UDM, Managua, Nic.
-                  </Typography>
+                    &nbsp;
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      UDM, Manague, Nic.
+                    </Typography>
+                  </div>
                 </Box>
                 {" — Finished"}
-              </React.Fragment>
+              </div>
             }
           />
         </ListItem>
@@ -78,28 +79,27 @@ export const CurriculumView: FunctionComponent<any> = () => {
             </IconButton>
           </ListItemAvatar>
           <ListItemText
-            primary={
-              <Typography variant="subtitle2" style={{fontSize: "16px"}}>
-                Computer Science
-              </Typography>
-            }
             secondary={
               <React.Fragment>
+                <Typography variant="subtitle2" style={{fontSize: "16px", color: textColor}}>
+                  Computer Science
+                </Typography>
                 <Box style={{display: "flex"}}>
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
-                    <CalendarTodayIcon style={{fontSize: "15px"}} /> &nbsp; 2017
-                  </Typography>
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <CalendarTodayIcon style={{fontSize: "15px"}} />
+                    &nbsp;
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      2017
+                    </Typography>
+                  </div>
                   &nbsp; &nbsp;&nbsp;
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
+                  <div style={{display: "flex", alignItems: "center"}}>
                     <PlaceIcon style={{fontSize: "15px"}} />
-                    &nbsp;UNA, Heredia, CR.
-                  </Typography>
+                    &nbsp;
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      UNA, Heredia, CR
+                    </Typography>
+                  </div>
                 </Box>
                 {" — Pending"}
               </React.Fragment>
@@ -114,28 +114,26 @@ export const CurriculumView: FunctionComponent<any> = () => {
             </IconButton>
           </ListItemAvatar>
           <ListItemText
-            primary={
-              <Typography variant="subtitle2" style={{fontSize: "16px"}}>
-                Self Learner
-              </Typography>
-            }
             secondary={
               <React.Fragment>
+                <Typography variant="subtitle2" style={{fontSize: "16px", color: textColor}}>
+                  Self Learner
+                </Typography>
                 <Box style={{display: "flex"}}>
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
-                    <CalendarTodayIcon style={{fontSize: "15px"}} /> &nbsp; 2017
-                  </Typography>
+                  <div style={{display: "flex", alignItems: "center"}}>
+                    <CalendarTodayIcon style={{fontSize: "15px"}} />
+                    &nbsp;
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      2017
+                    </Typography>
+                  </div>
                   &nbsp; &nbsp;&nbsp;
-                  <Typography
-                    variant="body1"
-                    style={{display: "flex", alignItems: "center", fontSize: "14px"}}
-                  >
+                  <div style={{display: "flex", alignItems: "center"}}>
                     <PlaceIcon style={{fontSize: "15px"}} />
-                    &nbsp;World Wide Web
-                  </Typography>
+                    <Typography variant="body1" style={{fontSize: "14px"}}>
+                      &nbsp;World Wide Web
+                    </Typography>
+                  </div>
                 </Box>
                 {" — Continue..."}
               </React.Fragment>

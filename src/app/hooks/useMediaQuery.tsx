@@ -29,11 +29,20 @@ export const useMediaQuery = () => {
   const ld = useMQ(LAYOUT.LARGE_DEVICES);
   const xld = useMQ(LAYOUT.EXTRA_LARGE_DEVICES);
 
+  const getScreen = () => {
+    if (xsmd) return "xs";
+    else if (smd) return "sm";
+    else if (md) return "md";
+    else if (ld) return "ld";
+    else if (xld) return "xl";
+  };
+
   return {
     isExtraSmallDevice: xsmd,
     isSmallDevice: smd,
     isMediumDevice: md,
     isLargeDevice: ld,
     isExtraLargeDevice: xld,
+    getScreen,
   };
 };
