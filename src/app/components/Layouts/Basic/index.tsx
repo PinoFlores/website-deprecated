@@ -3,8 +3,10 @@ import {BasicLayoutProps} from "./types";
 import {ProfileInfo} from "../../ProfileInfo";
 import {ProfileHeader} from "./../../ProfileHeader/index";
 import {Container, Grid, Box, Button} from "@mui/material";
+import {Card} from "../../Card";
 
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
+  const feeds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <Container maxWidth="lg">
       <Grid container spacing={3}>
@@ -36,6 +38,25 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
               />
             }
           />
+          <br />
+          <Grid container spacing={3}>
+            <Grid item xl={9}>
+              {feeds.map((e, i) => {
+                return (
+                  <>
+                    <Card>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque
+                      numquam magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam
+                      voluptatem perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas
+                      repellendus.
+                    </Card>
+                    {i === feeds.length - 1 ? null : <div style={{height: "1rem"}} />}
+                  </>
+                );
+              })}
+            </Grid>
+            <Grid item xl={3}></Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Container>
