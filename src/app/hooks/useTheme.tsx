@@ -6,7 +6,7 @@ export const useTheme = (type: themeType = "light") => {
   return createTheme({
     palette: {
       primary: {
-        main: "#007FFF",
+        main: "#1877f2",
       },
       background: {
         default: "#F2F5F8",

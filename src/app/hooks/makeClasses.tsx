@@ -13,7 +13,5 @@ type Rules = (theme: Theme) => StyleRules;
  */
 export const useMakeClasses = (rules: Rules) => {
   const theme = useTheme();
-  console.log(theme.palette.background);
-
   return useStyles(rules(theme))();
 };

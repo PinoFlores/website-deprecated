@@ -12,7 +12,7 @@ const App = (props: any) => {
 
   return (
     <AppContainer>
-      <Box className={classes.root} style={{padding: "2rem", height: "100%"}}>
+      <Box className={classes.root} style={{height: "100%"}}>
         <BasicLayout />
       </Box>
     </AppContainer>
