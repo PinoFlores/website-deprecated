@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/app/index.sass"],"names":[],"mappings":"AAAA,EACI,QAAS,CACT,SAAU,CACV,qBAAsB,CAAG,KAEzB,YAAa,CAAG,MAEhB,WAAY","file":"main.850dbe13.chunk.css","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box; }\nbody {\n    height: 100vh; }\n#root {\n    height: 100%; }\n"]}
