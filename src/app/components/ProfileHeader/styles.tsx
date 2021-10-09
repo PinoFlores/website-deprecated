@@ -3,7 +3,7 @@ import {Theme} from "@mui/material";
 export const styles = (theme: Theme) => {
   return {
     HeaderContainer: {
-      borderTop: "none !important",
+      border: "none !important",
       borderTopRightRadius: `${0} !important`,
       borderTopLeftRadius: `${0} !important`,
       borderBottomRightRadius: `${theme.spacing(1)} !important`,
@@ -15,11 +15,13 @@ export const styles = (theme: Theme) => {
     },
     userInfoContainer: {
       padding: "0 2rem",
-      height: "10rem",
-      borderTopRightRadius: 0,
-      borderTopLeftRadius: 0,
-      borderBottomRightRadius: theme.spacing(1),
-      borderBottomLeftRadius: theme.spacing(1),
+      // height: "15rem",
+      borderTop: "none !important",
+      border: `1px solid ${theme.palette.divider} !important`,
+      borderTopRightRadius: `${0} !important`,
+      borderTopLeftRadius: `${0} !important`,
+      borderBottomRightRadius: `${theme.spacing(1)} !important`,
+      borderBottomLeftRadius: `${theme.spacing(1)} !important`,
     },
   };
 };
