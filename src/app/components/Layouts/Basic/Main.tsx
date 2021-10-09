@@ -1,10 +1,16 @@
 import {FunctionComponent, ReactNode} from "react";
 import {Grid} from "@mui/material";
+import {Responsive} from "../../../types";
 
-export const MainContainer: FunctionComponent<{children: ReactNode}> = ({children}) => {
+interface Props {
+  children: ReactNode;
+  responsive?: Responsive;
+}
+
+export const MainContainer: FunctionComponent<Props> = (props) => {
   return (
-    <Grid item xl={10}>
-      {children}
+    <Grid item xs={10} {...props?.responsive}>
+      {props.children}
     </Grid>
   );
 };

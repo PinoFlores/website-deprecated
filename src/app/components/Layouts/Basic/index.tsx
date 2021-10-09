@@ -10,30 +10,10 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import {TabPanel} from "../../TabPanel";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {views} from "../../../views";
-const Profile = (props: any) => {
-  return <div>Profile</div>;
-};
-
-const Algos = (props: any) => {
-  return <div>Algos</div>;
-};
+import {useMediaQuery} from "../../../hooks/useMediaQuery";
 
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
-  const feeds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  const tabs = [
-    {
-      index: 0,
-      tabName: "Profile",
-      Component: Profile,
-    },
-    {
-      index: 1,
-      tabName: "Algo",
-      Component: Algos,
-    },
-  ];
-
+  const mq = useMediaQuery();
   const [value, setValue] = React.useState<number>(0);
 
   const handleChange = (event: any, index: number) => {
@@ -41,37 +21,41 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
     console.log(index);
   };
 
+  const isAsideVisible = mq.isExtraSmallDevice || mq.isSmallDevice || mq.isMediumDevice;
+
   return (
     <Container maxWidth="lg">
       <Grid container spacing={3}>
-        <AsideContainer>
-          <Box style={{padding: "1rem"}}>
-            <Button variant="outlined" disableElevation={true} style={{width: "100%"}}>
-              <LinkedInIcon style={{fontSize: "1rem"}} />
-              &nbsp; Linkedin
-            </Button>
-            <br />
-            <br />
-            {["Profile", "Feed"].map((item, i) => {
-              return (
-                <Button
-                  key={i}
-                  variant="text"
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                >
-                  <PersonOutlineOutlinedIcon />
-                  {item}
-                </Button>
-              );
-            })}
-          </Box>
-        </AsideContainer>
-        <MainContainer>
+        {isAsideVisible ? null : (
+          <AsideContainer>
+            <Box style={{padding: "1rem 0"}}>
+              <Button variant="outlined" disableElevation={true} style={{width: "100%"}}>
+                <LinkedInIcon style={{fontSize: "1rem"}} />
+                &nbsp; Linkedin
+              </Button>
+              <br />
+              <br />
+              {["Profile", "Feed"].map((item, i) => {
+                return (
+                  <Button
+                    key={i}
+                    variant="text"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PersonOutlineOutlinedIcon />
+                    {item}
+                  </Button>
+                );
+              })}
+            </Box>
+          </AsideContainer>
+        )}
+        <MainContainer responsive={{xs: 12, sm: 12, md: 12, lg: 9}}>
           <ProfileHeader
             tabs={views}
             tabValue={value}
