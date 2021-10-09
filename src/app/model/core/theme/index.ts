@@ -19,7 +19,7 @@ interface Color {
 }
 
 export interface Palette {
-  type: "light" | "dark";
+  type: string;
   common: {
     black: string;
     white: string;
