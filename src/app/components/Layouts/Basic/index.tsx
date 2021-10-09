@@ -4,13 +4,15 @@ import {ProfileInfo} from "../../ProfileInfo";
 import {ProfileHeader} from "./../../ProfileHeader/index";
 import {Container, Grid, Box, Button} from "@mui/material";
 import {Card} from "../../Card";
+import {MainContainer} from "./Main";
+import {AsideContainer} from "./Aside";
 
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
   const feeds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <Container maxWidth="lg">
       <Grid container spacing={3}>
-        <Grid item xl={2}>
+        <AsideContainer>
           <Box style={{padding: "1rem"}}>
             <Button variant="contained" disableElevation={true}>
               Download CV
@@ -25,8 +27,8 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
               );
             })}
           </Box>
-        </Grid>
-        <Grid item xl={10}>
+        </AsideContainer>
+        <MainContainer>
           <ProfileHeader
             backgroundImage="https://media-exp1.licdn.com/dms/image/C4D16AQHE2kPwC5uwAw/profile-displaybackgroundimage-shrink_350_1400/0/1618418698151?e=1639008000&v=beta&t=stAh3fn9DueG9r1g2J7PJQcH7uBB1hM-DboZv-SVYRw"
             userInfoComponent={
@@ -50,14 +52,26 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
                       voluptatem perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas
                       repellendus.
                     </Card>
-                    {i === feeds.length - 1 ? null : <div style={{height: "1rem"}} />}
+                    <div style={{height: "1rem"}} />
                   </>
                 );
               })}
             </Grid>
-            <Grid item xl={3}></Grid>
+            <Grid item xl={3}>
+              <Card>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque numquam
+                magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam voluptatem
+                perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas repellendus.
+              </Card>
+              <br />
+              <Card>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque numquam
+                magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam voluptatem
+                perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas repellendus.
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
+        </MainContainer>
       </Grid>
     </Container>
   );

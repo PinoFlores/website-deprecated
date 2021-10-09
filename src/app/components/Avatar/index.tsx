@@ -17,7 +17,7 @@ export const Avatar = (props: AvatarProps) => {
       <MUIAvatar
         alt="Remy Sharp"
         src={props?.src || ""}
-        sx={{width: props?.size || "6rem", height: props?.size || "6rem"}}
+        sx={{width: props?.size || "7rem", height: props?.size || "7rem"}}
       />
     </Paper>
   );
