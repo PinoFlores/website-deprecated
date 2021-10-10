@@ -83,13 +83,13 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
           <Typography variant="h6" color="inherit" component="div" sx={{flexGrow: 1}}>
             Developers
           </Typography>
-          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
+          <IconButton onClick={() => toggleColorMode()}>
             <SimCardDownloadOutlinedIcon
               className={mode === "dark" ? classes.light : classes.dark}
             />
           </IconButton>
           &nbsp; &nbsp;
-          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
+          <IconButton onClick={() => toggleColorMode()}>
             {mode === "dark" ? light : dark}
           </IconButton>
         </Toolbar>
