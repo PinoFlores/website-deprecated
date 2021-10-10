@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
 
-import {Box} from "@mui/system";
+import {alpha, Box} from "@mui/system";
 import {useStyles} from "./styles";
 import {ProfileHeaderProps} from "./types";
 import {Card, IconButton, Tab, Tabs} from "@mui/material";
@@ -18,7 +18,7 @@ function a11yProps(index: any) {
 export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
   const classes = useStyles(props.backgroundImage)();
 
-  const {toggleColorMode} = useChangeTheme();
+  const {mode, toggleColorMode} = useChangeTheme();
 
   const dark = <Brightness2Icon className={classes.dark} />;
   const light = <LightModeIcon className={classes.light} />;
@@ -28,8 +28,8 @@ export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
       <div className={classes.headerBgContainer}>
         <div className={classes.topActions}>
           <span></span>
-          <IconButton onClick={() => toggleColorMode()}>
-            {"dark" === "dark" ? dark : light}
+          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
+            {mode === "dark" ? light : dark}
           </IconButton>
         </div>
       </div>

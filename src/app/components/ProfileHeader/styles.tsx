@@ -1,4 +1,4 @@
-import {Theme} from "@mui/material";
+import {Theme, alpha} from "@mui/material";
 import {makeStyles, createStyles} from "@mui/styles";
 
 export const useStyles = (src: string) =>
@@ -20,6 +20,7 @@ export const useStyles = (src: string) =>
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
+        padding: "10px",
       },
       userInfoContainer: {
         padding: "0 2rem",
@@ -32,6 +33,9 @@ export const useStyles = (src: string) =>
       },
       light: {
         color: theme.palette.common.white,
+      },
+      themeSwitcher: {
+        backgroundColor: `${alpha(theme.palette.primary.light, 0.3)} !important`,
       },
       dark: {
         color: theme.palette.common.white,
