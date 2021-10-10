@@ -2,29 +2,43 @@ import React, {FunctionComponent} from "react";
 import {BasicLayoutProps} from "./types";
 import {ProfileInfo} from "../../ProfileInfo";
 import {ProfileHeader} from "./../../ProfileHeader/index";
-import {Container, Grid, Box, Button} from "@mui/material";
+import {Grid, Box, Button, AppBar, Toolbar, Typography, IconButton} from "@mui/material";
 import {Card} from "../../Card";
+import {useTheme} from "@mui/material/styles";
 import {MainContainer} from "./Main";
 import {AsideContainer} from "./Aside";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import {TabPanel} from "../../TabPanel";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {views} from "../../../views";
 import {useMediaQuery} from "../../../hooks/useMediaQuery";
-import {useTheme} from "../../../hooks/useTheme";
+import {useChangeTheme} from "../../../hooks/useChangeTheme";
+
+import {useStyles} from "./styles";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import Brightness2Icon from "@mui/icons-material/Brightness2";
+
+import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined";
 
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
-  const {changeTheme} = useTheme();
+  const {mode, toggleColorMode} = useChangeTheme();
   const mq = useMediaQuery();
   const [value, setValue] = React.useState<number>(0);
+
+  const classes = useStyles({mq})();
+
+  const theme = useTheme();
 
   const handleChange = (event: any, index: number) => {
     setValue(index);
     console.log(index);
   };
 
-  const isAsideVisible = mq.isExtraSmallDevice || mq.isSmallDevice || mq.isMediumDevice;
+  const dark = <Brightness2OutlinedIcon className={classes.dark} />;
+  const light = <LightModeIcon className={classes.light} />;
 
+  const isAsideVisible = true;
+  // const isAsideVisible = mq.isExtraSmallDevice || mq.isSmallDevice || mq.isMediumDevice;
+  // const isDevice =
   return (
     <Box
       style={{
@@ -33,25 +47,52 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
           : mq.isSmallDevice
           ? "2.5rem"
           : mq.isMediumDevice
-          ? "5rem"
-          : "10rem",
+          ? "6rem"
+          : mq.isLargeDevice
+          ? "8rem"
+          : "20rem",
         paddingRight: mq.isExtraSmallDevice
           ? 0
           : mq.isSmallDevice
           ? "2.5rem"
           : mq.isMediumDevice
-          ? "5rem"
-          : "10rem",
+          ? "6rem"
+          : mq.isLargeDevice
+          ? "8rem"
+          : "20rem",
       }}
     >
+      <AppBar
+        position="static"
+        elevation={0}
+        style={{
+          color: theme.palette.text.primary,
+          background: theme.palette.background.paper,
+          borderBottom: `${mq.isExtraSmallDevice ? 0 : "1px"} solid ${theme.palette.divider}`,
+          borderRight: `${mq.isExtraSmallDevice ? 0 : "1px"} solid ${theme.palette.divider}`,
+          borderLeft: `${mq.isExtraSmallDevice ? 0 : "1px"} solid ${theme.palette.divider}`,
+          borderTop: "none !important",
+
+          borderBottomLeftRadius: `${mq.isExtraSmallDevice ? 0 : "10px"}`,
+          borderBottomRightRadius: `${mq.isExtraSmallDevice ? 0 : "10px"}`,
+        }}
+      >
+        <Toolbar variant="dense" style={{padding: "0.5rem 1rem"}}>
+          <Typography variant="h6" color="inherit" component="div" sx={{flexGrow: 1}}>
+            Developers
+          </Typography>
+          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
+            {mode === "dark" ? light : dark}
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      {mq.isExtraSmallDevice ? null : <br />}
+
       <Grid container spacing={3}>
         {isAsideVisible ? null : (
           <AsideContainer>
             <Box style={{padding: "1rem 0"}}>
-              <Button variant="outlined" disableElevation={true} style={{width: "100%"}}>
-                <LinkedInIcon style={{fontSize: "1rem"}} />
-                &nbsp; Linkedin
-              </Button>
               <br />
               <br />
               {["Profile", "Feed"].map((item, i) => {
@@ -66,7 +107,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
                       alignItems: "center",
                     }}
                     onClick={() => {
-                      changeTheme();
+                      toggleColorMode();
                     }}
                   >
                     <PersonOutlineOutlinedIcon />
@@ -77,7 +118,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
             </Box>
           </AsideContainer>
         )}
-        <MainContainer responsive={{xs: 12, sm: 12, md: 12, lg: 9}}>
+        <MainContainer responsive={{xs: 12, sm: 12, md: 12, lg: 12}}>
           <ProfileHeader
             tabs={views}
             tabValue={value}
@@ -94,7 +135,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
           />
           <br />
           <Grid container spacing={3}>
-            <Grid item xl={9}>
+            <Grid item xs={12} sm={12} md={8} lg={9} xl={9}>
               {views.map((tab, i) => {
                 const {index, Component} = tab;
                 return (
@@ -103,22 +144,8 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
                   </TabPanel>
                 );
               })}
-
-              {/* {feeds.map((e, i) => {
-                return (
-                  <>
-                    <Card>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque
-                      numquam magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam
-                      voluptatem perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas
-                      repellendus.
-                    </Card>
-                    <div style={{height: "1rem"}} />
-                  </>
-                );
-              })} */}
             </Grid>
-            <Grid item xl={3}>
+            <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
               <Card>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque numquam
                 magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam voluptatem

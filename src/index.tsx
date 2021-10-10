@@ -20,7 +20,7 @@ interface Props {
 }
 
 const ThemeSwitcher = (props: Props) => {
-  const [mode, setMode] = React.useState<PaletteMode>("dark");
+  const [mode, setMode] = React.useState<PaletteMode>("light");
 
   const theme = React.useMemo<Theme>(() => {
     const newPalette = mode === "dark" ? themes.dark.palette : themes.light.palette;

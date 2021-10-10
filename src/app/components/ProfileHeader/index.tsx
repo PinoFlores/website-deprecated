@@ -3,9 +3,8 @@ import React, {FunctionComponent} from "react";
 import {alpha, Box} from "@mui/system";
 import {useStyles} from "./styles";
 import {ProfileHeaderProps} from "./types";
-import {IconButton, Tab, Tabs} from "@mui/material";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import Brightness2Icon from "@mui/icons-material/Brightness2";
+import {Button, IconButton, Tab, Tabs} from "@mui/material";
+
 import {useChangeTheme} from "../../hooks/useChangeTheme";
 import {useMediaQuery} from "./../../hooks/useMediaQuery";
 import {Card} from "../Card";
@@ -20,19 +19,22 @@ function a11yProps(index: any) {
 export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
   const mq = useMediaQuery();
   const classes = useStyles({src: props.backgroundImage, mq})();
-  const {mode, toggleColorMode} = useChangeTheme();
-
-  const dark = <Brightness2Icon className={classes.dark} />;
-  const light = <LightModeIcon className={classes.light} />;
 
   return (
     <Card className={classes.HeaderContainer}>
-      <div className={classes.headerBgContainer}>
+      <div className={classes.headerBgContainer} style={{borderRadius: 0}}>
         <div className={classes.topActions}>
           <span></span>
-          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
-            {mode === "dark" ? light : dark}
-          </IconButton>
+          <div>
+            <Button
+              href="https://www.linkedin.com/in/jose-aburto-92468a13b/"
+              variant="contained"
+              className={classes.linkedinBtn}
+              disableElevation
+            >
+              Linkedin
+            </Button>
+          </div>
         </div>
       </div>
       <div className={classes.userInfoContainer}>

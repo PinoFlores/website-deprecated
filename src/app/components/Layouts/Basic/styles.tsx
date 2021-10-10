@@ -1,9 +1,8 @@
 import {Theme, alpha} from "@mui/material";
 import {makeStyles, createStyles} from "@mui/styles";
-import {MediaQuery} from "../../hooks/useMediaQuery";
+import {MediaQuery} from "../../../hooks/useMediaQuery";
 
 interface Props {
-  src: string;
   mq: MediaQuery;
 }
 
@@ -24,7 +23,6 @@ export const useStyles = (props: Props) =>
         borderTopRightRadius: `0 !important`,
         height: "9rem",
         background: theme.palette.common.black,
-        backgroundImage: `url(${props.src})`,
       },
       topActions: {
         width: "100%",
@@ -38,16 +36,16 @@ export const useStyles = (props: Props) =>
         borderTop: "none !important",
       },
       light: {
-        color: theme.palette.common.white,
+        color: theme.palette.text.primary,
       },
       linkedinBtn: {
         color: `${theme.palette.common.white} !important`,
       },
       themeSwitcher: {
-        border: `1px solid ${alpha(theme.palette.common.white, 0.7)} !important`,
+        border: `1px solid ${alpha(theme.palette.text.primary, 0.7)} !important`,
       },
       dark: {
-        color: theme.palette.common.white,
+        color: theme.palette.text.primary,
       },
     });
   });
