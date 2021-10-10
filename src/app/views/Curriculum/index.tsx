@@ -48,8 +48,6 @@ export const CurriculumView: FunctionComponent<any> = () => {
         <Typography variant="h6">Experience</Typography>
         <List>
           {curriculum.experience.map((experience: Job, index: number) => {
-            console.log(experience);
-
             return (
               <ListItem
                 key={index}

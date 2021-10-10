@@ -54,33 +54,31 @@ export const ListItem: FunctionComponent<ItemProps> = (props) => {
           </ListItemAvatar>
         )}
 
-        <ListItemText
-          secondary={
-            <div>
-              <Typography variant="subtitle2" style={{fontSize: "16px", color: textColor}}>
-                {props.title}
-              </Typography>
-              <Box style={{display: "flex"}}>
-                <div style={{display: "flex", alignItems: "center"}}>
-                  <CalendarTodayIcon style={{fontSize: "15px"}} />
-                  &nbsp;
-                  <Typography variant="body1" style={{fontSize: "14px"}}>
-                    {props.dateInfo}
-                  </Typography>
-                </div>
-                &nbsp; &nbsp;&nbsp;
-                <div style={{display: "flex", alignItems: "center"}}>
-                  <PlaceIcon style={{fontSize: "15px"}} />
-                  &nbsp;
-                  <Typography variant="body1" style={{fontSize: "14px"}}>
-                    {props.location}
-                  </Typography>
-                </div>
-              </Box>
-              {props.description}
-            </div>
-          }
-        />
+        <ListItemText>
+          <>
+            <Typography variant="subtitle2" style={{fontSize: "16px", color: textColor}}>
+              {props.title}
+            </Typography>
+            <Typography component="div" style={{display: "flex"}}>
+              <div style={{display: "flex", alignItems: "center"}}>
+                <CalendarTodayIcon style={{fontSize: "15px"}} />
+                &nbsp;
+                <Typography variant="body1" style={{fontSize: "14px"}}>
+                  {props.dateInfo}
+                </Typography>
+              </div>
+              &nbsp; &nbsp;&nbsp;
+              <div style={{display: "flex", alignItems: "center"}}>
+                <PlaceIcon style={{fontSize: "15px"}} />
+                &nbsp;
+                <Typography variant="body1" style={{fontSize: "14px"}}>
+                  {props.location}
+                </Typography>
+              </div>
+            </Typography>
+            {props.description}
+          </>
+        </ListItemText>
       </MUILisItem>
       {getDivider()}
     </>

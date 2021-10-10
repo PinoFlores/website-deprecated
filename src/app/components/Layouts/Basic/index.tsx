@@ -80,7 +80,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
         }}
       >
         <Toolbar variant="dense" style={{padding: "0.5rem 1rem"}}>
-          <Typography variant="h6" color="inherit" component="div" sx={{flexGrow: 1}}>
+          <Typography variant="h6" color="inherit" sx={{flexGrow: 1}}>
             Developers
           </Typography>
           <IconButton onClick={() => toggleColorMode()}>

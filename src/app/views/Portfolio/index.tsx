@@ -18,7 +18,7 @@ export const PortfolioView: FunctionComponent<any> = () => {
                 alt="green iguana"
               />
               <CardContent>
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography gutterBottom variant="h6">
                   Delinternet Unpaid System
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -80,7 +80,7 @@ export const PortfolioView: FunctionComponent<any> = () => {
                 alt="green iguana"
               />
               <CardContent>
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography gutterBottom variant="h6">
                   Delinternet Hub
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
