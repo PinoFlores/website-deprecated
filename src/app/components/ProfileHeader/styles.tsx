@@ -1,20 +1,26 @@
 import {Theme, alpha} from "@mui/material";
 import {makeStyles, createStyles} from "@mui/styles";
+import {MediaQuery} from "../../hooks/useMediaQuery";
 
-export const useStyles = (src: string) =>
+interface Props {
+  src: string;
+  mq: MediaQuery;
+}
+export const useStyles = (props: Props) =>
   makeStyles((theme: Theme) =>
     createStyles({
       HeaderContainer: {
         borderTop: "none !important",
         borderTopRightRadius: `${0} !important`,
         borderTopLeftRadius: `${0} !important`,
-        borderBottomRightRadius: `${theme.spacing(1)} !important`,
-        borderBottomLeftRadius: `${theme.spacing(1)} !important`,
+        borderBottomRightRadius: `${props.mq.isExtraSmallDevice ? 0 : theme.spacing(1)} !important`,
+        borderBottomLeftRadius: `${props.mq.isExtraSmallDevice ? 0 : theme.spacing(1)} !important`,
+        padding: `0 !important`,
       },
       headerBgContainer: {
         height: "9rem",
         background: theme.palette.common.black,
-        backgroundImage: `url(${src})`,
+        backgroundImage: `url(${props.src})`,
       },
       topActions: {
         width: "100%",
@@ -28,8 +34,8 @@ export const useStyles = (src: string) =>
         borderTop: "none !important",
         borderTopRightRadius: `${0} !important`,
         borderTopLeftRadius: `${0} !important`,
-        borderBottomRightRadius: `${theme.spacing(1)} !important`,
-        borderBottomLeftRadius: `${theme.spacing(1)} !important`,
+        borderBottomRightRadius: `${props.mq.isExtraSmallDevice ? 0 : theme.spacing(1)} !important`,
+        borderBottomLeftRadius: `${props.mq.isExtraSmallDevice ? 0 : theme.spacing(1)} !important`,
       },
       light: {
         color: theme.palette.common.white,

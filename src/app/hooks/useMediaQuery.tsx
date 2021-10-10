@@ -22,7 +22,16 @@ const LAYOUT = {
   }),
 };
 
-export const useMediaQuery = () => {
+export interface MediaQuery {
+  isExtraSmallDevice: boolean;
+  isSmallDevice: boolean;
+  isMediumDevice: boolean;
+  isLargeDevice: boolean;
+  isExtraLargeDevice: boolean;
+  getScreen: () => "xs" | "sm" | "md" | "ld" | "xl";
+}
+
+export const useMediaQuery = (): MediaQuery => {
   const xsmd = useMQ(LAYOUT.EXTRA_SMALL_DEVICES);
   const smd = useMQ(LAYOUT.SMALL_DEVICES);
   const md = useMQ(LAYOUT.MEDIUM_DEVICES);
@@ -32,9 +41,9 @@ export const useMediaQuery = () => {
   const getScreen = () => {
     if (xsmd) return "xs";
     else if (smd) return "sm";
-    else if (md) return "md";
     else if (ld) return "ld";
     else if (xld) return "xl";
+    return "md";
   };
 
   return {

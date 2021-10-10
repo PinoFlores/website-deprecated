@@ -26,7 +26,24 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
   const isAsideVisible = mq.isExtraSmallDevice || mq.isSmallDevice || mq.isMediumDevice;
 
   return (
-    <Container maxWidth="lg">
+    <Box
+      style={{
+        paddingLeft: mq.isExtraSmallDevice
+          ? 0
+          : mq.isSmallDevice
+          ? "2.5rem"
+          : mq.isMediumDevice
+          ? "5rem"
+          : "10rem",
+        paddingRight: mq.isExtraSmallDevice
+          ? 0
+          : mq.isSmallDevice
+          ? "2.5rem"
+          : mq.isMediumDevice
+          ? "5rem"
+          : "10rem",
+      }}
+    >
       <Grid container spacing={3}>
         {isAsideVisible ? null : (
           <AsideContainer>
@@ -117,7 +134,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
           </Grid>
         </MainContainer>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

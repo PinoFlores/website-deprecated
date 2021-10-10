@@ -1,19 +1,10 @@
 import React from "react";
-import {Box, Theme} from "@mui/material";
 
+import {Box} from "@mui/material";
+import {useStyles} from "./styles";
+import {withTheme} from "@mui/styles";
 import BasicLayout from "./components/Layouts/Basic";
-import {withTheme, makeStyles, createStyles} from "@mui/styles";
 import "./index.sass";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      overflow: "auto",
-      height: "100%",
-      backgroundColor: theme.palette.background.default,
-    },
-  })
-);
 
 const App = (props: any) => {
   const classes = useStyles();

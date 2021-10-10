@@ -3,10 +3,12 @@ import React, {FunctionComponent} from "react";
 import {alpha, Box} from "@mui/system";
 import {useStyles} from "./styles";
 import {ProfileHeaderProps} from "./types";
-import {Card, IconButton, Tab, Tabs} from "@mui/material";
+import {IconButton, Tab, Tabs} from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
 import {useChangeTheme} from "../../hooks/useChangeTheme";
+import {useMediaQuery} from "./../../hooks/useMediaQuery";
+import {Card} from "../Card";
 
 function a11yProps(index: any) {
   return {
@@ -16,15 +18,15 @@ function a11yProps(index: any) {
 }
 
 export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
-  const classes = useStyles(props.backgroundImage)();
-
+  const mq = useMediaQuery();
+  const classes = useStyles({src: props.backgroundImage, mq})();
   const {mode, toggleColorMode} = useChangeTheme();
 
   const dark = <Brightness2Icon className={classes.dark} />;
   const light = <LightModeIcon className={classes.light} />;
 
   return (
-    <Card variant="outlined" className={classes.HeaderContainer}>
+    <Card className={classes.HeaderContainer}>
       <div className={classes.headerBgContainer}>
         <div className={classes.topActions}>
           <span></span>

@@ -1,8 +1,12 @@
 import {Theme} from "@mui/material";
-export const styles = (theme: Theme) => {
-  return {
+import {makeStyles, createStyles} from "@mui/styles";
+
+export const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
     root: {
-      background: theme.palette.background.default,
+      overflow: "auto",
+      height: "100%",
+      backgroundColor: theme.palette.background.default,
     },
-  };
-};
+  })
+);
