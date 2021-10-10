@@ -36,18 +36,18 @@ export const useStyles = (props: Props) =>
         borderTop: "none !important",
       },
       light: {
-        fontSize: "20px !important",
+        fontSize: "25px !important",
         color: theme.palette.text.primary,
       },
       linkedinBtn: {
         color: `${theme.palette.common.white} !important`,
       },
       themeSwitcher: {
-        padding: "5px !important",
+        padding: "7px !important",
         border: `1px solid ${alpha(theme.palette.text.primary, 0.7)} !important`,
       },
       dark: {
-        fontSize: "20px !important",
+        fontSize: "25px !important",
         color: theme.palette.text.primary,
       },
     });

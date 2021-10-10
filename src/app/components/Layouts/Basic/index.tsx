@@ -86,7 +86,7 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
               className={mode === "dark" ? classes.light : classes.dark}
             />
           </IconButton>
-          &nbsp;
+          &nbsp; &nbsp;
           <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
             {mode === "dark" ? light : dark}
           </IconButton>
