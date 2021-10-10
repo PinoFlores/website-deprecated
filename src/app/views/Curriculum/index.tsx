@@ -51,8 +51,8 @@ export const CurriculumView: FunctionComponent<any> = () => {
               <ListItem
                 hideIcon
                 title={experience.position}
-                dateInfo={`${experience.from} ${experience.to}`}
-                location={experience.location}
+                dateInfo={`${experience.from} - ${experience.to}`}
+                location={`${experience.location} / ${experience.at}`}
                 description={
                   <Box>
                     <ul style={{marginTop: "10px", paddingLeft: "1rem"}}>
