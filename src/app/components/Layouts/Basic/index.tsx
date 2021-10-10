@@ -15,7 +15,7 @@ import {useChangeTheme} from "../../../hooks/useChangeTheme";
 
 import {useStyles} from "./styles";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import Brightness2Icon from "@mui/icons-material/Brightness2";
+import SimCardDownloadOutlinedIcon from "@mui/icons-material/SimCardDownloadOutlined";
 
 import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined";
 
@@ -81,6 +81,12 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
           <Typography variant="h6" color="inherit" component="div" sx={{flexGrow: 1}}>
             Developers
           </Typography>
+          <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
+            <SimCardDownloadOutlinedIcon
+              className={mode === "dark" ? classes.light : classes.dark}
+            />
+          </IconButton>
+          &nbsp;
           <IconButton className={classes.themeSwitcher} onClick={() => toggleColorMode()}>
             {mode === "dark" ? light : dark}
           </IconButton>
