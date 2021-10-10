@@ -2,12 +2,13 @@ import React, {FunctionComponent} from "react";
 
 import _ from "lodash";
 import {Box} from "@mui/system";
-import {Typography} from "@mui/material";
+import {Chip, Typography} from "@mui/material";
 import {Card} from "../../components/Card";
 import {Job} from "../../model/core/curriculum/Job";
 import {List, ListItem} from "../../components/List";
 import {ProfileRepository} from "../../model/Repository";
 import {Education} from "./../../model/core/curriculum/Education";
+import {Skill} from "./../../model/core/curriculum/Skill";
 
 export const CurriculumView: FunctionComponent<any> = () => {
   const {curriculum} = ProfileRepository;
@@ -66,6 +67,13 @@ export const CurriculumView: FunctionComponent<any> = () => {
             );
           })}
         </List>
+      </Card>
+      <br />
+      <Card style={{padding: "1rem 1.5rem"}}>
+        <Typography variant="h6">Skills</Typography>
+        {curriculum.skills.map((skill: Skill, index: number) => {
+          return <Chip label={skill.name} style={{margin: "0 5px 5px 0"}} />;
+        })}
       </Card>
     </>
   );

@@ -37,7 +37,7 @@ interface ItemProps {
 
 export const ListItem: FunctionComponent<ItemProps> = (props) => {
   const {palette} = useTheme();
-  const textColor = palette.text.primary;
+  const textColor = palette.primary.main;
 
   const getDivider = () => {
     if (!_.has(props, "hideDivider")) return null;
