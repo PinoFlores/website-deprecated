@@ -19,6 +19,8 @@ import SimCardDownloadOutlinedIcon from "@mui/icons-material/SimCardDownloadOutl
 
 import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined";
 
+import CV from "../../../asset/CV - JOSE ABURTO - FULL STACK DEVELOPER.jpg";
+
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
   const {mode, toggleColorMode} = useChangeTheme();
   const mq = useMediaQuery();
@@ -153,18 +155,19 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={3} xl={3}>
               <Card>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque numquam
-                magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam voluptatem
-                perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas repellendus.
-              </Card>
-              <br />
-              <Card>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam doloremque numquam
-                magnam dolorum cumque dicta tempore quae, ipsum assumenda, quisquam voluptatem
-                perferendis ipsam quibusdam ad alias aliquam! Distinctio, voluptas repellendus.
+                <img src={CV} width="100%" alt="" />
+                {/* &nbsp; */}
+                <Button
+                  disableElevation
+                  style={{color: theme.palette.common.white, width: "100%"}}
+                  variant="contained"
+                >
+                  Download
+                </Button>
               </Card>
             </Grid>
           </Grid>
+          <br />
         </MainContainer>
       </Grid>
     </Box>
