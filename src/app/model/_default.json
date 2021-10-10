@@ -281,7 +281,6 @@
             "light": {
                 "borderRadius": "15px",
                 "palette": {
-                    "type": "light",
                     "common": {
                         "black": "#000",
                         "white": "#fff"
@@ -319,8 +318,7 @@
                     "text": {
                         "primary": "#080808",
                         "secondary": "rgb(51, 51, 51)",
-                        "disabled": "#BFC5D2",
-                        "icon": "rgba(0, 0, 0, 0.38)"
+                        "disabled": "#BFC5D2"
                     },
                     "divider": "#e4e9f2",
                     "background": {
@@ -344,7 +342,6 @@
             "dark": {
                 "borderRadius": "15px",
                 "palette": {
-                    "type": "light",
                     "common": {
                         "black": "#000",
                         "white": "#fff"
@@ -382,8 +379,7 @@
                     "text": {
                         "primary": "#FFF",
                         "secondary": "rgba(255, 255, 255, 0.7)",
-                        "disabled": "rgba(255, 255, 255, 0.5)",
-                        "icon": "rgba(255, 255, 255, 0.5)"
+                        "disabled": "rgba(255, 255, 255, 0.5)"
                     },
                     "divider": "#353B43",
                     "background": {

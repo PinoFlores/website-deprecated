@@ -8,7 +8,9 @@ import "./index.sass";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      backgroundColor: theme.palette.error.dark,
+      overflow: "auto",
+      height: "100%",
+      backgroundColor: theme.palette.background.default,
     },
   })
 );
@@ -17,7 +19,7 @@ const App = (props: any) => {
   const classes = useStyles();
 
   return (
-    <Box style={{height: "100%"}}>
+    <Box className={classes.root}>
       <BasicLayout />
     </Box>
   );

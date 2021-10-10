@@ -1,13 +1,12 @@
 import React, {FunctionComponent} from "react";
 
-import {Card, IconButton, Tab, Tabs, Theme} from "@mui/material";
-import {ProfileHeaderProps} from "./types";
-import Brightness2Icon from "@mui/icons-material/Brightness2";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import {makeStyles, createStyles} from "@mui/styles";
-
 import {Box} from "@mui/system";
-import {useTheme} from "../../hooks/useTheme";
+import {useStyles} from "./styles";
+import {ProfileHeaderProps} from "./types";
+import {Card, IconButton, Tab, Tabs} from "@mui/material";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import Brightness2Icon from "@mui/icons-material/Brightness2";
+import {useChangeTheme} from "../../hooks/useChangeTheme";
 
 function a11yProps(index: any) {
   return {
@@ -16,49 +15,23 @@ function a11yProps(index: any) {
   };
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    HeaderContainer: {
-      borderTopRightRadius: `${0} !important`,
-      borderTopLeftRadius: `${0} !important`,
-      borderBottomRightRadius: `${theme.spacing(1)} !important`,
-      borderBottomLeftRadius: `${theme.spacing(1)} !important`,
-    },
-    headerBgContainer: {
-      height: "9rem",
-      background: theme.palette.common.black,
-    },
-    userInfoContainer: {
-      padding: "0 2rem",
-      border: "none !important",
-      borderTop: "none !important",
-      borderTopRightRadius: `${0} !important`,
-      borderTopLeftRadius: `${0} !important`,
-      borderBottomRightRadius: `${theme.spacing(1)} !important`,
-      borderBottomLeftRadius: `${theme.spacing(1)} !important`,
-    },
-  })
-);
-
 export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
-  const classes = useStyles();
-  const {type, changeTheme} = useTheme();
+  const classes = useStyles(props.backgroundImage)();
+
+  const {toggleColorMode} = useChangeTheme();
+
+  const dark = <Brightness2Icon className={classes.dark} />;
+  const light = <LightModeIcon className={classes.light} />;
 
   return (
     <Card variant="outlined" className={classes.HeaderContainer}>
-      <div
-        className={classes.headerBgContainer}
-        style={{
-          backgroundImage: `url(${props.backgroundImage})`,
-        }}
-      >
-        <IconButton onClick={() => changeTheme()}>
-          {type === "dark" ? (
-            <Brightness2Icon style={{color: "#FFF"}} />
-          ) : (
-            <LightModeIcon style={{color: "#FFF"}} />
-          )}
-        </IconButton>
+      <div className={classes.headerBgContainer}>
+        <div className={classes.topActions}>
+          <span></span>
+          <IconButton onClick={() => toggleColorMode()}>
+            {"dark" === "dark" ? dark : light}
+          </IconButton>
+        </div>
       </div>
       <div className={classes.userInfoContainer}>
         {props?.userInfoComponent}

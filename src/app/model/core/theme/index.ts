@@ -19,7 +19,6 @@ interface Color {
 }
 
 export interface Palette {
-  type: string;
   common: {
     black: string;
     white: string;
@@ -33,7 +32,6 @@ export interface Palette {
     primary: string;
     secondary: string;
     disabled: string;
-    icon: string;
   };
   divider: string;
   background: {
