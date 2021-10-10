@@ -6,15 +6,17 @@ import {Chip, Typography} from "@mui/material";
 import {Card} from "../../components/Card";
 import {Job} from "../../model/core/curriculum/Job";
 import {List, ListItem} from "../../components/List";
-import {ProfileRepository} from "../../model/Repository";
+
 import {Education} from "./../../model/core/curriculum/Education";
 import {Skill} from "./../../model/core/curriculum/Skill";
+import {useData} from "./../../hooks/useData";
 
 export const CurriculumView: FunctionComponent<any> = () => {
-  const {curriculum} = ProfileRepository;
+  const {profile} = useData();
+  const {curriculum} = profile;
 
   return (
-    <>
+    <React.Fragment>
       <Card style={{padding: "1rem 1.5rem"}}>
         <Typography variant="h6">About me</Typography>
         <div style={{height: "0.9rem"}} />
@@ -29,6 +31,7 @@ export const CurriculumView: FunctionComponent<any> = () => {
           {curriculum.educations.map((education: Education, index: number) => {
             return (
               <ListItem
+                key={index}
                 status={education.status}
                 title={education.name}
                 dateInfo={education.started_at}
@@ -49,6 +52,7 @@ export const CurriculumView: FunctionComponent<any> = () => {
 
             return (
               <ListItem
+                key={index}
                 hideIcon
                 title={experience.position}
                 dateInfo={`${experience.from} - ${experience.to}`}
@@ -57,7 +61,7 @@ export const CurriculumView: FunctionComponent<any> = () => {
                   <Box>
                     <ul style={{marginTop: "10px", paddingLeft: "1rem"}}>
                       {experience.details.map((item: string, j: number) => {
-                        return <li>{item}</li>;
+                        return <li key={j}>{item}</li>;
                       })}
                     </ul>
                   </Box>
@@ -72,9 +76,9 @@ export const CurriculumView: FunctionComponent<any> = () => {
       <Card style={{padding: "1rem 1.5rem"}}>
         <Typography variant="h6">Skills</Typography>
         {curriculum.skills.map((skill: Skill, index: number) => {
-          return <Chip label={skill.name} style={{margin: "0 5px 5px 0"}} />;
+          return <Chip key={index} label={skill.name} style={{margin: "0 5px 5px 0"}} />;
         })}
       </Card>
-    </>
+    </React.Fragment>
   );
 };

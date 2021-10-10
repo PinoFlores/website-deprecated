@@ -1,5 +1,18 @@
 import {Profile} from "./core/Profile";
-import Default from "./_default.json";
+import {Themes, WebLayoutConfigurations} from "./core/site/Configurations";
+import _profile from "./profile.json";
+import _layoutConfigs from "./layoutConfigs.json";
 
-export const ProfileRepository: Profile = Default;
-export const Themes = ProfileRepository.webLayoutConfigurations.themes;
+interface Repository {
+  profile: Profile;
+  layoutConfigs: WebLayoutConfigurations;
+  themes: Themes;
+}
+
+let layoutConfigs: WebLayoutConfigurations = _layoutConfigs;
+
+export const respository: Repository = {
+  profile: _profile,
+  layoutConfigs,
+  themes: layoutConfigs.themes,
+};

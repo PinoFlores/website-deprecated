@@ -12,5 +12,4 @@ export interface Profile {
   curriculum: Curriculum;
   portfolio: Portfolio;
   blog: Blog;
-  webLayoutConfigurations: WebLayoutConfigurations;
 }

@@ -1,0 +1,166 @@
+{
+    "username": "Jose Aburto",
+    "position": "Full Stack Developer",
+    "src": "https://media-exp1.licdn.com/dms/image/C4D03AQFEvfVLdcIr0A/profile-displayphoto-shrink_800_800/0/1553727303871?e=1639008000&v=beta&t=BBsgkBvEkgE-NDFML98x78d424iR_9C-x6IiZ0f8jBI",
+    "contacts": [
+        {
+            "name": "Linkedin",
+            "value": "https://www.linkedin.com/in/jose-aburto-92468a13b/"
+        }
+    ],
+    "curriculum": {
+        "about": "3 years of experience in backend and frontend. Passionate about software, fast learning, great ideas, analysis, good availability, good eye for interface design.",
+        "skills": [
+            {
+                "name": "Reactjs",
+                "level": "high"
+            },
+            {
+                "name": "React Native",
+                "level": "medium"
+            },
+            {
+                "name": "Javascript",
+                "level": "high"
+            },
+            {
+                "name": "Nodejs",
+                "level": "high"
+            },
+            {
+                "name": "Typescript",
+                "level": "high"
+            },
+            {
+                "name": "Html5",
+                "level": "high"
+            },
+            {
+                "name": "Css/Sass/Less",
+                "level": "high"
+            },
+            {
+                "name": "Java",
+                "level": "high"
+            },
+            {
+                "name": "Php",
+                "level": "medium"
+            },
+            {
+                "name": "Problem Solver",
+                "level": "high"
+            },
+            {
+                "name": "Data Structure",
+                "level": "high"
+            },
+            {
+                "name": "Algorithms",
+                "level": "high"
+            },
+            {
+                "name": "SOLID",
+                "level": "high"
+            },
+            {
+                "name": "Design Patterns",
+                "level": "high"
+            },
+            {
+                "name": "TDD",
+                "level": "high"
+            },
+            {
+                "name": "Microservice",
+                "level": "medium"
+            },
+            {
+                "name": "Docker",
+                "level": "high"
+            },
+            {
+                "name": "Redis",
+                "level": "high"
+            },
+            {
+                "name": "RestFull",
+                "level": "high"
+            },
+            {
+                "name": "Web Design",
+                "level": "high"
+            },
+            {
+                "name": "Adobe Suite",
+                "level": "high"
+            }
+        ],
+        "educations": [
+            {
+                "name": "Graphic Design",
+                "status": "done",
+                "started_at": 2015,
+                "center": "UDM, Managua, Nic.",
+                "details": "— Finished"
+            },
+            {
+                "name": "Computer Science",
+                "status": "pending",
+                "started_at": 2017,
+                "center": "UNA, Heredia, CR",
+                "details": "— Pending"
+            },
+            {
+                "name": "Self Learner",
+                "status": "continue",
+                "started_at": 2017,
+                "center": "World Wide Web",
+                "details": "— Continue..."
+            }
+        ],
+        "experience": [
+            {
+                "position": "Frontend Developer",
+                "at": "Campat",
+                "location": "Managua, Nic.",
+                "from": "04/2013",
+                "to": "04/2013",
+                "details": [
+                    "Design, layout and programming different\n        websites for different clients from Unite\n        State"
+                ]
+            },
+            {
+                "position": "Junior Web Full Stack",
+                "at": "CCSS",
+                "location": "Managua, Nic.",
+                "from": "06/2015",
+                "to": "10/2017",
+                "details": [
+                    "API Desing and implementation with Java ecosystem",
+                    "Microservice with Spring.",
+                    "System maintance and documentation.",
+                    "Web development with Reactjs.",
+                    "System maintance and documentation."
+                ]
+            },
+            {
+                "position": "Full Stack Developer",
+                "at": "Delinternet",
+                "location": "Tarragona, Spain",
+                "from": "04/2019",
+                "to": "current",
+                "details": [
+                    "Product Owner.",
+                    "Junior UX/UI Designer.",
+                    "Design and implement full backend.",
+                    "Web development with Reactjs.",
+                    "Php Legacy sytems support.",
+                    "System maintance and documentation."
+                ]
+            }
+        ]
+    },
+    "portfolio": {},
+    "blog": {}
+}

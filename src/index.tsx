@@ -5,9 +5,9 @@ import App from "./app/App";
 import {ThemeProvider, Theme, PaletteMode} from "@mui/material";
 import reportWebVitals from "./reportWebVitals";
 import {createTheme} from "@mui/material/styles";
-import {Themes} from "./app/model/Repository";
 
-const themes = Themes;
+import {DataProvider} from "./app/providers/DataProvider";
+import {useData} from "./app/hooks/useData";
 
 interface ContextProps {
   toggleColorMode: () => void;
@@ -21,6 +21,7 @@ interface Props {
 
 const ThemeSwitcher = (props: Props) => {
   const [mode, setMode] = React.useState<PaletteMode>("light");
+  const {themes} = useData();
 
   const theme = React.useMemo<Theme>(() => {
     const newPalette = mode === "dark" ? themes.dark.palette : themes.light.palette;
@@ -54,9 +55,11 @@ const ThemeSwitcher = (props: Props) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeSwitcher>
-      <App />
-    </ThemeSwitcher>
+    <DataProvider>
+      <ThemeSwitcher>
+        <App />
+      </ThemeSwitcher>
+    </DataProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
