@@ -1,6 +1,6 @@
 import {AvatarProps} from "./types";
 import {Avatar as MUIAvatar, Paper} from "@mui/material";
-import {useTheme} from "../../hooks/useTheme";
+import {useTheme} from "@mui/material/styles";
 
 export const Avatar = (props: AvatarProps) => {
   const theme = useTheme();

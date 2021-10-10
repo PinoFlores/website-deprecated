@@ -1,17 +1,9 @@
-import {createTheme} from "@mui/material/styles";
+import React from "react";
 
-type themeType = "light" | "dark";
+import {ThemeContext} from "../contexts/ThemeContext";
 
-export const useTheme = (type: themeType = "light") => {
-  return createTheme({
-    palette: {
-      primary: {
-        main: "#1877f2",
-      },
-      background: {
-        default: "#F2F5F8",
-        paper: "#FFF",
-      },
-    },
-  });
+export const useTheme = () => {
+  const context = React.useContext(ThemeContext);
+  if (!context) throw new Error("useTheme must be inside ThemeContext");
+  return context;
 };

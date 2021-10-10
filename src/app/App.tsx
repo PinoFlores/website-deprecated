@@ -1,22 +1,26 @@
 import React from "react";
-import {Box} from "@mui/material";
+import {Box, Theme} from "@mui/material";
 
-import AppContainer from "./Container";
-import {useMakeClasses} from "./hooks/makeClasses";
 import BasicLayout from "./components/Layouts/Basic";
-import {styles} from "./styles";
+import {withTheme, makeStyles, createStyles} from "@mui/styles";
 import "./index.sass";
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      backgroundColor: theme.palette.error.dark,
+    },
+  })
+);
+
 const App = (props: any) => {
-  const classes = useMakeClasses(styles);
+  const classes = useStyles();
 
   return (
-    <AppContainer>
-      <Box className={classes.root} style={{height: "100%"}}>
-        <BasicLayout />
-      </Box>
-    </AppContainer>
+    <Box style={{height: "100%"}}>
+      <BasicLayout />
+    </Box>
   );
 };
 
-export default App;
+export default withTheme(App);

@@ -1,6 +1,6 @@
-import {Theme} from "@mui/material";
 import {useTheme} from "../hooks/useTheme";
 import {makeStyles, StyleRules} from "@mui/styles";
+import {Theme} from "../model/core/theme";
 
 export const useStyles = (rules: StyleRules) => makeStyles(() => rules);
 
@@ -12,6 +12,6 @@ type Rules = (theme: Theme) => StyleRules;
  * @returns {StyleRules}
  */
 export const useMakeClasses = (rules: Rules) => {
-  const theme = useTheme();
+  const {theme} = useTheme();
   return useStyles(rules(theme))();
 };

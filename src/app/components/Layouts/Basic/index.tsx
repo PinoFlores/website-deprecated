@@ -11,8 +11,10 @@ import {TabPanel} from "../../TabPanel";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import {views} from "../../../views";
 import {useMediaQuery} from "../../../hooks/useMediaQuery";
+import {useTheme} from "../../../hooks/useTheme";
 
 const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
+  const {changeTheme} = useTheme();
   const mq = useMediaQuery();
   const [value, setValue] = React.useState<number>(0);
 
@@ -45,6 +47,9 @@ const BasicLayout: FunctionComponent<BasicLayoutProps> = (props) => {
                       display: "flex",
                       justifyContent: "flex-start",
                       alignItems: "center",
+                    }}
+                    onClick={() => {
+                      changeTheme();
                     }}
                   >
                     <PersonOutlineOutlinedIcon />

@@ -21,7 +21,7 @@ interface BreakPointsRules {
   xl: LayoutConfiguration;
 }
 
-interface Themes {
+export interface Themes {
   light: Theme;
   dark: Theme;
 }

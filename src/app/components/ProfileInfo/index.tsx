@@ -3,11 +3,10 @@ import React from "react";
 import {Avatar} from "../Avatar";
 import {Typography} from "@mui/material";
 import {ProfileInfoProps} from "./types.d";
-import {useTheme} from "../../hooks/useTheme";
+import {useTheme} from "@mui/material/styles";
 
 export const ProfileInfo = (props: ProfileInfoProps) => {
   const theme = useTheme();
-
   return (
     <div
       style={{

@@ -33,7 +33,7 @@ export interface Palette {
     primary: string;
     secondary: string;
     disabled: string;
-    hint: string;
+    icon: string;
   };
   divider: string;
   background: {

@@ -1,11 +1,13 @@
 import React, {FunctionComponent} from "react";
 
-import {Card, Tab, Tabs} from "@mui/material";
+import {Card, IconButton, Tab, Tabs, Theme} from "@mui/material";
 import {ProfileHeaderProps} from "./types";
-import {useMakeClasses} from "../../hooks/makeClasses";
+import Brightness2Icon from "@mui/icons-material/Brightness2";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import {makeStyles, createStyles} from "@mui/styles";
 
-import {styles} from "./styles";
 import {Box} from "@mui/system";
+import {useTheme} from "../../hooks/useTheme";
 
 function a11yProps(index: any) {
   return {
@@ -14,8 +16,33 @@ function a11yProps(index: any) {
   };
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    HeaderContainer: {
+      borderTopRightRadius: `${0} !important`,
+      borderTopLeftRadius: `${0} !important`,
+      borderBottomRightRadius: `${theme.spacing(1)} !important`,
+      borderBottomLeftRadius: `${theme.spacing(1)} !important`,
+    },
+    headerBgContainer: {
+      height: "9rem",
+      background: theme.palette.common.black,
+    },
+    userInfoContainer: {
+      padding: "0 2rem",
+      border: "none !important",
+      borderTop: "none !important",
+      borderTopRightRadius: `${0} !important`,
+      borderTopLeftRadius: `${0} !important`,
+      borderBottomRightRadius: `${theme.spacing(1)} !important`,
+      borderBottomLeftRadius: `${theme.spacing(1)} !important`,
+    },
+  })
+);
+
 export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
-  const classes = useMakeClasses(styles);
+  const classes = useStyles();
+  const {type, changeTheme} = useTheme();
 
   return (
     <Card variant="outlined" className={classes.HeaderContainer}>
@@ -24,7 +51,15 @@ export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
         style={{
           backgroundImage: `url(${props.backgroundImage})`,
         }}
-      />
+      >
+        <IconButton onClick={() => changeTheme()}>
+          {type === "dark" ? (
+            <Brightness2Icon style={{color: "#FFF"}} />
+          ) : (
+            <LightModeIcon style={{color: "#FFF"}} />
+          )}
+        </IconButton>
+      </div>
       <div className={classes.userInfoContainer}>
         {props?.userInfoComponent}
         <br />

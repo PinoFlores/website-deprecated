@@ -1,6 +1,6 @@
 import React, {FunctionComponent, ReactNode} from "react";
 import {Card as MUICard} from "@mui/material";
-import {useTheme} from "../../hooks/useTheme";
+import {useTheme} from "@mui/material/styles";
 
 interface Props {
   children: ReactNode;

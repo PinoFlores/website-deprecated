@@ -15,7 +15,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import PlaceIcon from "@mui/icons-material/Place";
 import {Box} from "@mui/system";
 import CheckIcon from "@mui/icons-material/Check";
-import {useTheme} from "./../../hooks/useTheme";
+import {useTheme} from "@mui/material/styles";
 
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import ConstructionIcon from "@mui/icons-material/Construction";
