@@ -39,7 +39,14 @@ export const ProfileHeader: FunctionComponent<ProfileHeaderProps> = (props) => {
         {props?.userInfoComponent}
         <br />
         <Box>
-          <Tabs value={props.tabValue} onChange={props.onTabChange} aria-label="basic tabs example">
+          <Tabs
+            scrollButtons
+            variant="scrollable"
+            allowScrollButtonsMobile
+            value={props.tabValue}
+            onChange={props.onTabChange}
+            aria-label="scrollable force tabs example"
+          >
             {props.tabs.map((tab, i) => {
               const {index, name} = tab;
               return <Tab key={i} label={name} {...a11yProps(index)} />;

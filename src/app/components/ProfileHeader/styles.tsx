@@ -29,7 +29,7 @@ export const useStyles = (props: Props) =>
         padding: "10px",
       },
       userInfoContainer: {
-        padding: "0 2rem",
+        padding: "0 1.3rem",
         border: "none !important",
         borderTop: "none !important",
         borderTopRightRadius: `${0} !important`,
